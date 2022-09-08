@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Level">
+
+    <TextView
+        android:id="@+id/idlevel"
+        android:layout_width="124dp"
+        android:layout_height="35dp"
+        android:text="Level"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/idtimer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.72" />
+
+    <TextView
+        android:id="@+id/idtimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="540dp"
+        android:text="Timer"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.675"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/idscore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Score"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/idquestionnumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.166"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.842" />
+
+    <TextView
+        android:id="@+id/idquestionnumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="Questions1/n"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/idquestion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.11"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/idrg"
+        android:layout_width="205dp"
+        android:layout_height="246dp"
+        android:layout_marginBottom="160dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <RadioButton
+            android:id="@+id/idchoice1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Choice1" />
+
+        <RadioButton
+            android:id="@+id/idchoice2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Choice2" />
+
+        <RadioButton
+            android:id="@+id/idchoice3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Choice3" />
+
+        <RadioButton
+            android:id="@+id/idchoice4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Choice4" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/idquestion"
+        android:layout_width="192dp"
+        android:layout_height="22dp"
+        android:layout_marginBottom="36dp"
+        android:text="Question"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/idrg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.543"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/idbtnsumit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sumit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/idnext" />
+
+    <Button
+        android:id="@+id/idnext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="64dp"
+        android:text="Next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
