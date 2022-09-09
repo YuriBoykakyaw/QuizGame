@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/anime"
     tools:context=".Level">
 
     <TextView
@@ -11,96 +12,126 @@
         android:layout_width="124dp"
         android:layout_height="35dp"
         android:text="Level"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/idtimer"
+        android:textColor="#E91E63"
+        android:textColorHighlight="#F44336"
+        android:textColorHint="#F44336"
+        android:textColorLink="#F44336"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/idquestionnumber"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.735"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.72" />
+        app:layout_constraintVertical_bias="0.893" />
 
     <TextView
         android:id="@+id/idtimer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="540dp"
-        android:text="Timer"
-        android:textSize="16sp"
+        android:layout_width="91dp"
+        android:layout_height="57dp"
+        android:text="Timer:"
+        android:textColor="@color/black"
+        android:textSize="23sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.675"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.053" />
 
     <TextView
         android:id="@+id/idscore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Score"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/idquestionnumber"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.166"
+        android:text="Score:"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/idrg"
+        app:layout_constraintHorizontal_bias="0.229"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.842" />
+        app:layout_constraintTop_toBottomOf="@+id/idtimer"
+        app:layout_constraintVertical_bias="0.38" />
 
     <TextView
         android:id="@+id/idquestionnumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:text="Questions1/n"
-        android:textSize="20sp"
+        android:layout_marginBottom="24dp"
+        android:text="Questions:1/n"
+        android:textColor="@color/black"
+        android:textColorHighlight="@color/purple_700"
+        android:textSize="25sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/idquestion"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.11"
+        app:layout_constraintHorizontal_bias="0.84"
         app:layout_constraintStart_toStartOf="parent" />
 
     <RadioGroup
         android:id="@+id/idrg"
-        android:layout_width="205dp"
-        android:layout_height="246dp"
-        android:layout_marginBottom="160dp"
+        android:layout_width="191dp"
+        android:layout_height="230dp"
+        android:layout_marginBottom="176dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent">
 
         <RadioButton
             android:id="@+id/idchoice1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Choice1" />
+            android:text="Choice1"
+            android:textColor="#FFE500"
+            android:textSize="20sp"
+
+            android:textStyle="bold" />
+
 
         <RadioButton
             android:id="@+id/idchoice2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Choice2" />
+            android:text="Choice2"
+            android:textColor="#07FF11"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <RadioButton
             android:id="@+id/idchoice3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Choice3" />
+            android:text="Choice3"
+            android:textColor="#FF0000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <RadioButton
             android:id="@+id/idchoice4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Choice4" />
+            android:text="Choice4"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
     </RadioGroup>
 
     <TextView
         android:id="@+id/idquestion"
-        android:layout_width="192dp"
-        android:layout_height="22dp"
-        android:layout_marginBottom="36dp"
+        android:layout_width="168dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="8dp"
         android:text="Question"
+        android:textColor="@color/black"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/idrg"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.543"
+        app:layout_constraintHorizontal_bias="0.868"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -116,11 +147,11 @@
         android:id="@+id/idnext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="64dp"
+        android:layout_marginBottom="24dp"
         android:text="Next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

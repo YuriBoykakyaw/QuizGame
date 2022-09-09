@@ -2,6 +2,7 @@ package com.example.mcgame;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -12,6 +13,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -48,7 +50,7 @@ public class Level extends AppCompatActivity {
         txtlevel.setText("Level" + level);
         txtTimer = (TextView) findViewById(R.id.idtimer);
         txtScore = (TextView) findViewById(R.id.idscore);
-        txtQuestion = (TextView) findViewById(R.id.idquestionnumber);
+        txtQuestion = (TextView) findViewById(R.id.idquestion);
         txtQuestionnumber = (TextView) findViewById(R.id.idquestionnumber);
         rg = (RadioGroup) findViewById(R.id.idrg);
         choice1 = (RadioButton) findViewById(R.id.idchoice1);
@@ -63,12 +65,21 @@ public class Level extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 checkAnswer();
+                if(questionIndex>10){
+                    Toast.makeText(Level.this,"Congratulations",Toast.LENGTH_LONG).show();
+                    Intent intent=new Intent(Level.this,Congrate.class);
+                    startActivity(intent);
+
+                }
+                else if(choice1.isChecked() || choice2.isChecked()||choice3.isChecked()||choice4.isChecked()
+                        && questionIndex<10){
+                    setUpQuestion();                }
             }
         });
         btnnext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(questionIndex<=10){
+                if(questionIndex<10){
                     setUpQuestion();
                 }
                 else{
@@ -80,9 +91,18 @@ public class Level extends AppCompatActivity {
         if (level.equals("0")) {
             txtTimer.setVisibility(View.INVISIBLE);
         }
+        else{
+            Timer();
+        }
         setUpQuestion();
     }
 
+
+    public int randomNumber(int max, int min) {
+        int range = max - min + 1;
+        int rand = (int) (Math.random() * range) + min;
+        return rand;
+    }
     public void Timer() {
         long miliSec = 0;
         if (level.equals("1")) {
@@ -98,7 +118,7 @@ public class Level extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                if(questionIndex<=10){
+                if(questionIndex<10){
                     setUpQuestion();
                 }
                 else{
@@ -108,20 +128,16 @@ public class Level extends AppCompatActivity {
         }.start();
     }
 
-    public int randomNumber(int max, int min) {
-        int range = max - min + 1;
-        int rand = (int) (Math.random() * range) + min;
-        return rand;
-    }
-
     public void setUpQuestion() {
+        txtQuestionnumber.setText("Question: "+questionIndex+"/10");
+        questionIndex++;
         rg.clearCheck();
         if (level.equals("1")) {
             txtTimer.setVisibility(View.VISIBLE);
-            Timer();
+            cdTimer.start();
         } else if (level.equals("2")) {
             txtTimer.setVisibility(View.VISIBLE);
-            Timer();
+            cdTimer.start();
         }
         num1 = randomNumber(12, 1);
         num2 = randomNumber(12, 1);
@@ -180,11 +196,10 @@ public class Level extends AppCompatActivity {
                 MediaPlayer ring= MediaPlayer.create(Level.this,R.raw.wrong);
                 ring.start();
             }
-            questionIndex++;
+
             if(!level.equals("0")){
                 cdTimer.cancel();
             }
-
 
         }
         else{
